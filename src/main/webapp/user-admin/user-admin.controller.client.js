@@ -41,13 +41,13 @@ function selectUser(event) {
 }
 
 function deleteUser(event) {
-    console.log(event.target)
+//    console.log(event.target)
     var deleteBtn = jQuery(event.target)
     var theClass = deleteBtn.attr("class")
     var theIndex = deleteBtn.attr("id")
     var theId = users[theIndex]._id
-    console.log(theClass)
-    console.log(theIndex)
+//    console.log(theClass)
+//    console.log(theIndex)
 
     userService.deleteUser(theId)
       .then(function (status) {
