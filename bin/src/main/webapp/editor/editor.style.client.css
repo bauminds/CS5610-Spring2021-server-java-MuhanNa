@@ -1,0 +1,33 @@
+.container {
+    margin-top: 5em;
+    background-color: darkGray;
+}
+
+.inline {
+  text-align: center;
+}
+
+.heading-styling {
+    color: white;
+}
+
+.module-styling {
+    background-color: lightGray;
+    border: 6px solid darkGray;
+    color: white;
+}
+
+.tag-styling {
+    color: white;
+}
+
+.pill-styling {
+    background-color: darkGray;
+    color: white;
+    border: 12px solid white;
+}
+
+.contentContainer {
+    background-color: white;
+    height: 80%;
+}
