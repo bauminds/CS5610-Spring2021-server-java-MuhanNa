@@ -69,8 +69,8 @@ function renderUsers(users) {
         <td>${user.lastName}</td>
         <td>${user.role}</td>
         <td>
-            <button class="wbdv-delete" id="${i}">Delete</button>
-            <button class="wbdv-select" id="${user._id}">Select</button>
+            <i class="fa-2x fas fa-times wbdv-delete" id="${i}"></i>
+            <i class="fa-2x fas fa-edit wbdv-select" id="${user._id}"></i>
         </td>
     </tr>
   `)
@@ -87,13 +87,19 @@ function updateUser() {
   selectedUser.password = $passwordFld.val()
   selectedUser.firstName = $firstNameFld.val()
   selectedUser.lastName = $lastNameFld.val()
-  selectedUser.roleName = roleFld.val()
+  selectedUser.role = $roleFld.val()
   userService.updateUser(selectedUser._id, selectedUser)
     .then(function (status) {
       var index = users.findIndex(user => user._id === selectedUser._id)
       users[index] = selectedUser
       renderUsers(users)
     })
+
+   $usernameFld.val("")
+   $passwordFld.val("")
+   $firstNameFld.val("")
+   $lastNameFld.val("")
+   $roleName.val("")
 }
 
 function init() {
@@ -114,15 +120,15 @@ function init() {
       createUser({
         username: $usernameFld.val(),
         password: $passwordFld.val(),
-        firstName: $firstNameFld.val()
-        lastName: $lastNameFld.val()
-        role: $roleFld.val()
+        firstName: $firstNameFld.val(),
+        lastName: $lastNameFld.val(),
+        role: $roleFld.val(),
       })
       $usernameFld.val("")
       $passwordFld.val("")
       $firstNameFld.val("")
       $lastNameFld.val("")
-//      $roleName.val("")
+      $roleName.val("")
     }
   )
 
